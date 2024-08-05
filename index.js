@@ -31,7 +31,7 @@ const url = req.body.url;
 const foundIndex = originalUrls.indexOf(url);
 let urlPattern = /^http:\/\/(w{3}.)[a-zA-Z0-9]{2,}(\.[a-zA-Z0-9]{2,})(\.[a-zA-Z0-9]{2,})?/gm
 
-if(!url.includes("https://") && !url.includes("http://")) {
+if(urlPattern.test(url) == false) {
 
 return res.json({ error:  'invalid url' });
 
